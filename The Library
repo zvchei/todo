@@ -1,3 +1,8 @@
+= The Library
+Concept
+
+== Introduction
+
 "The Library" is a toolkit designed to aid individuals with extensive data collections (data hoarders) in arranging and managing their collections. The fundamental class of components of this system is the Document, representing various forms of data such as text, image, or recording. A special type of Document is the Archives which serves as a repository for metadata and spatial information regarding to all of the documents in the Library.
 
 Each distinct physical site accommodates a database housing the Archive specific to that location, along with the documents that can be accommodated within the confines of the database. Any documents that exceed the capacity of the database are systematically organized within the local file system. To ensure data integrity, multiple physical locations are required to maintain redundant copies of the archived data. Periodic synchronization of Archives between different locations is possible when a network connection is established. These synchronized Archives retain comprehensive data regarding the documents, including history, copy count, locations, and identifying attributes.
