@@ -8,4 +8,6 @@ Similarly, as modifications are applied to a Document's content, the Archive mod
 
 It's important to note that automatic propagation of deletions and  to other Archives will not occur; user initiation is essential for such action.
 
+Another important class within this system is the Tag, which essentially functions as a document that describes another document. Tags are typically preserved within the database. They play a crucial role in facilitating the search and organization of the document collection.
+
 ...
