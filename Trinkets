@@ -7,3 +7,4 @@ A compilation of small to medium-sized ideas for projects suitable for learning,
 * Simple, but usable console-based code editor: syntax highlighting, code navigation, auto-completion. Modular design.
 * P2P document sharing and collaboration tool
 * Vertical Gantt chart. Vertical lanes represent horizontal scaling capacity (workload capacity). The chart is segmented vertically into production cycles (sprints, project phases, etc.).
+* A framework for building WebGL2 playgrounds. An UI for WebGL!
