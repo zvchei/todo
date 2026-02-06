@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "7ecdf5e4f39d8ed7",
+        "id": "378fd8c4710084db",
         "type": "tabs",
         "children": [
           {
-            "id": "318449d4cc041710",
+            "id": "1ce218493591a40c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Malik Petersen.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Malik Petersen"
             }
           }
         ]
@@ -150,20 +154,20 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Malik Petersen.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Malik Petersen"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -176,6 +180,6 @@
       "bases:Create new base": false
     }
   },
-  "active": "318449d4cc041710",
+  "active": "1ce218493591a40c",
   "lastOpenFiles": []
 }
