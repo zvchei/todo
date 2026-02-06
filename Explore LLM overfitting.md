@@ -1,0 +1,1 @@
+Repeat the same prompt, e.g. `Generate three tandom numbers` using structured output, and draw a histogram of the probability. Do it for two numbers (or anything else) -> plot a 2d heat map.
