@@ -1,1 +1,3 @@
 An agent that iteratively updates its own instructions to improve its performance.
+* The agent has a SKILL and a tool for creating new python-based tools.
+* The agent has a SKILL to create new skills.
