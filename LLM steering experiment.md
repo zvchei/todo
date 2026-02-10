@@ -1,4 +1,4 @@
-# LMM steering experiment
+# LLM steering experiment
 
 ## Concept
 
