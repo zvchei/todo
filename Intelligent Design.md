@@ -1,0 +1,1 @@
+Programs evolve to survive in a simulated ecology, however the evolution is not driven by randomness, but an LLM trying to change programs to make them more resilient.
