@@ -26,6 +26,8 @@ The Memory Explorer encompasses a set of functions designed to create an archive
 * It includes an LLM and text-to-speech processor to create guided meditation and guided active imagination sessions for memory exploration.
 * An NLP algorithm identifies focus words and themes from the user's described memories and supports the other modules.
 
+See link:Memory%20Exploration%20Tool.md[Memory Exploration Tool] for the full standalone description of this component.
+
 === The Document Organizer
 The Document Organizer assists users in organizing and preserving their file collections. It offers the ability to preview files, suggests appropriate Tags by analyzing their contents, and ensures that important information is readily available to the user. This includes reminders about storage maintenance and warnings about documents at risk of loss of data.
 
