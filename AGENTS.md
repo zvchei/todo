@@ -26,6 +26,10 @@ Research and ideation documentation repository for capturing and developing idea
 - **No tracking files**: Don't create markdown files for planning or notes—use git history instead
 - **Research methodology**: Document both findings and approach when exploring ideas
 
+## Git Guidelines
+
+- **Backup before rewriting history**: Before any operation that could destroy or alter existing commits — such as rebase, reset, squash, amend, or force push — create a local backup branch (`git branch backup/<description>`) first. Do not push it.
+
 ## Working Principles
 
 - Concepts don't need to be complete; document thinking as it develops
