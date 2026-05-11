@@ -8,8 +8,8 @@ explain their motives when questioned. Faulty reasoning is quite acceptable, giv
 knowledge and inherent biases.
 
 The agents exist in a simplified virtual environment and perceive their surroundings as a stream of events. The events
-they personally experience are stored as memories in the form of a narrative. Based on this narrative, the agents
-choose their actions by predicting how the narrative will evolve.
+they personally experience are stored as [memories](Ideological%20Conflict%20Simulation.md#3-learning) in the form of a narrative. Based on this narrative, the agents
+choose their actions by [predicting](Ideological%20Conflict%20Simulation.md#2-thinking) how the narrative will evolve.
 
 The ability to move from place to place presents the agents with the unique challenge of uncovering hidden variables in
 their environment. To make accurate predictions, the agents must reconstruct a probable sequence of events leading to
@@ -18,7 +18,7 @@ and which are not. Another crucial aspect of the agents' reasoning is the abilit
 events they have observed, particularly of the actions they are about to take, as these actions may have long-term
 consequences that only appear far into the future.
 
-The agents should be given time to rethink the situation, as the amount of data they directly observe will be limited
+The agents should be given time to [rethink](Ideological%20Conflict%20Simulation.md#1-dreaming) the situation, as the amount of data they directly observe will be limited
 by some physical constraints in the simulation. Based on learned patterns, the agents should be able to fill in the
 missing pieces. Agents should be allowed to exchange information. Starting with a primitive language, the agents will
 eventually develop a complex way of communication.
@@ -33,19 +33,19 @@ such as the need to explore, the need to communicate, the need to experiment and
 prioritized based on the agent's physical needs and internal clocks, out of their direct control. It could be
 interesting to see what happens when the agents' receive the ability to influence these priorities at some point.
 
-* Design Cognitive Framework: Develop a cognitive framework that incorporates reasoning, biases, and planning abilities
+* Design Cognitive Framework: Develop a [cognitive framework](Ideological%20Conflict%20Simulation.md#graph-structure) that incorporates reasoning, biases, and planning abilities
 for the agents. The reasoning process should not be opaque, and the agents should be able to explain their motives
 when questioned. No black-box neural networks.
 
-* Memory and Narrative Integration: Implement a system where agents perceive events as a narrative stored in memory.
+* Memory and Narrative Integration: Implement a system where agents perceive events as a narrative stored in [memory](Ideological%20Conflict%20Simulation.md#3-learning).
 This narrative should drive their decision-making process by providing the necessary context for predicting the outcome
 of their actions.
 
 * Handling Uncertainty and Complexity: Enable agents to navigate uncertainty by reconstructing probable sequences of
 events leading to the current state. Develop mechanisms to prioritize relevant events across different locations and
-contexts. As in the human reasoning processes, there shouldn't be gaps in the agents' narative.
+contexts. As in the human reasoning processes, there shouldn't be gaps in the agents' narrative — see [confabulation](Ideological%20Conflict%20Simulation.md#3-learning) in ICS.
 
-* Adaptive Learning and Communication: Facilitate adaptive learning where agents can fill in missing data based on
+* Adaptive Learning and Communication: Facilitate adaptive learning where agents can [fill in missing data](Ideological%20Conflict%20Simulation.md#3-learning) based on
 observed patterns as consequence of exploratory actions. I.e. agents should have the ability to probe or ask for
 answers. Begin with a basic communication protocol and allow it to evolve into a complex language over time through
 agent interaction.
@@ -56,7 +56,7 @@ Additionally, introduce new aspects of agents' behavior, such as their ability t
 should also possess the capability to process "abstract ideas" represented as narrative events not directly reflected
 in the physical environment. Alternatively, they could maintain an inventory of conceptual "objects" that they consider
 part of their personal environment. Enable agents to share these abstract objects with others, simulating the
-exchange of ideologies or beliefs, akin to religious concepts.
+[exchange of ideologies](Ideological%20Conflict%20Simulation.md#ideological-suppression-in-this-model) or beliefs, akin to religious concepts.
 
 * Iterative Development: Implement the simulation mechanics in iterative way, allowing to refine and adjust based on
 experimental outcomes.

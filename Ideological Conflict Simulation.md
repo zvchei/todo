@@ -96,6 +96,8 @@ A simulation running the three processes above on a seeded graph, where:
 - **Learning** injects external events as memories, triggering confabulation when causal gaps cannot be bridged naturally
 - **Suppression cost** is readable directly from the graph: the aggregate node weight of all latent dissenters — nodes suppressed below the thinking threshold but not yet forgotten. No separate counter needed; the graph encodes it structurally
 
+One natural implementation context is a simulation of socially embedded non-human agents — see [Non-player characters](Non-player%20characters.md).
+
 ---
 
 ## Key Question for the Model
