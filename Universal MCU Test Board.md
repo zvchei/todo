@@ -13,7 +13,7 @@ This does not exist as a unified product today. The landscape splits into five i
 - **Embedded test frameworks** (labgrid, Zephyr Twister, pytest-embedded, Unity/Ceedling, Jumpstarter, TinyHCI) — good software orchestration; require custom wiring per board and do not provide a universal hardware fixture.
 - **ChipWhisperer CW308 UFO** — the closest hardware analog: a universal baseboard with interchangeable MCU target boards, fully scripted from Python. Purpose-built for side-channel security research, not functional unit testing.
 - **JTAG/SWD probes** (OpenOCD, J-Link) — allow flashing and memory-level control of any JTAG-capable MCU, but do not provide pin stimulus/response at the application level.
-- See also [[Trinkets]] for related hardware experiments.
+- See also [Trinkets](Trinkets.md) for related hardware experiments.
 
 ---
 

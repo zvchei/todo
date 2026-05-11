@@ -61,5 +61,5 @@ The companion does not simulate; it observes and programs. The blocks themselves
 - Explore existing open-source mesh protocols (e.g. OpenThread, custom CAN-like bus) as a starting point.
 - Design the programmer cradle: how does it identify an unknown block? How does it confirm flashing succeeded?
 - Sketch the companion app's graph visualizer.
-- Consider the [[Universal MCU Test Board]] as a potential development platform for early block prototypes.
-- See also [[Trinkets]] for related smaller experiments.
+- Consider the [Universal MCU Test Board](Universal%20MCU%20Test%20Board.md) as a potential development platform for early block prototypes.
+- See also [Trinkets](Trinkets.md) for related smaller experiments.
