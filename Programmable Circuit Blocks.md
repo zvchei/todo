@@ -14,7 +14,7 @@ Once assembled, the blocks form a mesh and pass messages to each other through t
 
 ## Physical Design
 
-- **Blocks**: Small, roughly cube-shaped units housing a microcontroller and flash memory. Flash ensures programmed behavior survives power cycles and handling.
+- **Blocks**: Small, roughly cube-shaped units housing a microcontroller, flash memory, and a small display. An e-paper screen is a natural fit — it is low power, readable in any lighting, and retains its image without power, so even a block sitting idle shows its current behavior and last known state. The display shows the loaded behavior name and a live status summary (current value, state, signal activity).
 - **Connections**: Uniform connectors on each face — magnetic snap or jumper cables for cases where physical layout requires flexible routing. Connectors carry power and a shared communication bus.
 - **Programmer**: A standalone cradle. Place a block on it, select a behavior from the companion app or a local menu, flash it. No soldering, no cables beyond the cradle's own USB link.
 - **Bridge block**: A special block with a USB port (or BLE) that connects the mesh to a computer. Acts as a gateway — it can relay live signal traffic and inject commands from the companion app into the network.
