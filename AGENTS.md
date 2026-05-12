@@ -26,6 +26,13 @@ Research and ideation documentation repository for capturing and developing idea
 - **No tracking files**: Don't create markdown files for planning or notes—use git history instead
 - **Research methodology**: Document both findings and approach when exploring ideas
 
+## Issue Closing Guidelines
+
+When closing an issue, add a comment that includes:
+- **If a file was created or is the primary artefact**: a link to that file on GitHub (e.g. `https://github.com/zvchei/todo/blob/main/<file_name>.md`).
+- **If a commit closes the issue**: a link to that commit on GitHub (e.g. `https://github.com/zvchei/todo/commit/<sha>`).
+- Both links should appear together when both apply. Skip whichever is not relevant (e.g. no file link when only existing files were edited).
+
 ## Git Guidelines
 
 - **Backup before rewriting history**: Before any operation that could destroy or alter existing commits — such as rebase, reset, squash, amend, or force push — create a local backup branch (`git branch backup/<description>`) first. Do not push it.
