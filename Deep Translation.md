@@ -24,14 +24,16 @@ The sentence as a whole also receives:
 
 ## Interaction Model
 
-The tool is conversational. After the initial breakdown, the user can:
+The primary interface is action-based, not conversational. Each word or phrase exposes a set of predefined actions — invokable via shortcut, click, or keyboard — that trigger structured, focused responses:
 
-- Ask why a specific word was chosen over an alternative
-- Request more examples of a grammatical form
-- Submit a paraphrase and see how meaning shifts
-- Ask about register, formality, or regional variation
+- *More examples* — examples of this word in other constructions
+- *Alternatives* — what changes if a synonym is used
+- *Grammar detail* — expand the annotation for this form
+- *Why this word?* — reasoning behind the translation choice
 
-This turns translation into a dialogue rather than a lookup.
+Each action opens in its own isolated view, scoped to that word or phrase. There is no shared chat context — sessions are per topic, per word, or per sentence fragment.
+
+Free-form chat is available as an escape hatch for questions that don't fit a predefined action, but it is not the default mode.
 
 ## Scope Constraints
 
