@@ -52,3 +52,5 @@ Several existing articles in this collection touch on components or themes that 
 * [Self-modifying agent](Self-modifying%20agent) - An agent that iteratively updates its own instructions to improve performance. This is the single-agent analogue of what the researcher does across a population of specimens.
 
 * [Autopoietic Workflow Orchestrator](Autopoietic%20Workflow%20Orchestrator) - A system that treats errors as feedback and continuously refines its own logic through closed-loop evolution. The "autopoietic resilience" principle mirrors the evolutionary loop here.
+
+* [Agentic Genetic Programming](Agentic%20Genetic%20Programming.md) - The generalisation of this mechanism beyond prompts: same genome/fitness/agent-roles structure, but applicable to any evolvable artifact (code, skills, configurations). This document is the prompt-as-genome instantiation of that broader framework.

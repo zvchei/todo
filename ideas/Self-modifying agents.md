@@ -55,3 +55,7 @@ A population-based optimization loop that evolves skills through targeted mutati
 - **Skill interdependencies**: How do we evolve dependent skills without cascading failures?
 - **Convergence signals**: Plateau in top scores vs. diversity collapse vs. fixed iteration budget?
 - **Test corpus evolution**: Should test cases themselves evolve to stay challenging (dynamic curriculum)?
+
+### Related Ideas
+
+* [Agentic Genetic Programming](Agentic%20Genetic%20Programming.md) - This skill-evolution mechanism is the skill-as-genome instantiation of a broader, domain-agnostic framework (genome + fitness function + agent roles), which also covers code, prompts, and simulated ecologies.
