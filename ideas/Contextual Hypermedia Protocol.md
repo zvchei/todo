@@ -1,12 +1,18 @@
 # The Contextual Hypermedia Protocol (CHP)
 
-Modern APIs force rigid trade-offs between static REST schemas and complex RPC layers. The Contextual Hypermedia Protocol (CHP) eliminates this overhead by combining dynamic state machines with a minimalist, token-optimised syntax designed natively for both autonomous AI agents and runtime-rendered human interfaces. CHP functions via a continuous dialogue loop in which the server dictates an immediate action horizon, the client executes a command or supplies requested arguments, and the server updates its state payloads to produce a refreshed menu. In CHP, context is server-authoritative session state. The client maintains it by merging partial updates; the server determines the schemas, tools, and actions exposed to the client for its next invocation.
+Modern APIs force rigid trade-offs between static REST schemas and complex RPC layers. The Contextual Hypermedia Protocol (CHP) eliminates this overhead by combining dynamic state machines with a minimalist, token-optimised syntax designed natively for both autonomous AI agents and runtime-rendered human interfaces. CHP functions via a continuous dialogue loop in which the server dictates an immediate action horizon, the client executes a command or supplies requested arguments, and the server updates its state payloads to produce a refreshed menu. In CHP, context represents server-authoritative session state expressed through partial updates and intent signaling; the server determines the schemas, tools, and actions exposed to the client for its next invocation, while the client interprets and manages that context according to its own requirements.
 
 ## Protocol Syntax and Mechanics
 
 CHP utilises a lightweight layout to minimise byte overhead and provide clear structure for both machine parsers and human developers. The protocol relies on the following concepts:
 
-* **Custom State Tables and Schemas**: The server transmits arbitrary named state tables, such as `[state]` or `[device]`, to represent current session parameters. State-table payloads are partial updates: the client merges supplied fields into the corresponding local table, and omitted fields retain their previous values. An optional `[schema.<name>]` table defines the expected structure of the matching `[<name>]` state table, using a TOML representation of the JSON Schema vocabulary used for LLM tool invocation: `type`, `properties`, `required`, `description`, and `enum`. A schema update fully replaces the preceding schema with the same name. Omitting a property's definition from a replacement schema signals that the server has deleted the corresponding field. The client may remove the field from its local state table or represent the deletion in another way. Schemas can be sent at any time, allowing client interfaces or UI renderers to adapt on the fly.
+* **Custom State Tables, Arrays, and Schemas**: The server transmits arbitrary named state tables, such as `[state]` or `[device]`, to represent current session parameters. By default, state tables act as partial updates: the sender transmits only modified or new fields, and omitted fields retain their prior values. Sending an empty table (e.g., `state = {}` or an empty `[state]`) signals a request to clear or delete that table.
+
+    TOML array-of-tables entries, such as `[[messages]]`, represent contextual arrays. Each entry creates an object from its supplied fields and appends it to the matching local array without merging into earlier entries. Transmitting an empty array (such as `messages = []`) signals an intent to clear or delete the array.
+
+    An optional `[schema.<name>]` table defines the expected structure of `[<name>]` (or elements of `[[<name>]]`), using a TOML representation of the JSON Schema vocabulary used for LLM tool invocation: `type`, `properties`, `required`, `description`, and `enum`. Each schema update fully replaces the previous schema with that name. When a replacement schema omits a property definition, the server signals that the field has been deleted; the client may remove it from its local state table or handle the deletion in another way. Schemas can be sent at any time, allowing client interfaces or UI renderers to adapt on the fly.
+
+* **Partial Update Etiquette & Client Autonomy**: The protocol establishes conventions for signalling intent (such as partial updates, array accumulation, or empty-container deletions), but how a peer internally handles, retains, or invalidates prior state is not strictly mandated. Interpretation is an implicit contract and communication etiquette: while the server indicates its immediate context and intended state changes, the client remains free to retain past messages in a conversation history, archive superseded state tables, or purge deleted items immediately.
 
 * **Reserved Keywords**: `[schema]`, `[actions]`, `[tools]`, and `[calls]`.
 
@@ -134,6 +140,47 @@ current = "SHUTTING_DOWN"
 select = []
 ```
 
+### Contextual Arrays and State Deletions
+
+Contextual arrays accumulate entries across partial server updates. Empty containers (`[]` or `{}`) signal the intent to clear or delete the corresponding array or state table:
+
+```toml
+# Server:
+
+[[messages]]
+content = "Hello!"
+```
+
+```toml
+# Client:
+# messages = [{ content = "Hello!" }]
+```
+
+```toml
+# Server:
+
+[[messages]]
+content = "How are you?"
+```
+
+```toml
+# Client:
+# messages = [{ content = "Hello!" }, { content = "How are you?" }]
+```
+
+```toml
+# Server:
+
+messages = []
+state = {}
+```
+
+```toml
+# Client:
+# The 'messages' array is deleted or emptied: messages = [].
+# The 'state' table is cleared/deleted.
+```
+
 ## Architectural Principles
 
 * **Client Agnostic**: AI agents parse the raw tool maps and unique action names to make programmatic decisions. Human client applications read the exact same payloads to dynamically render native widgets, text inputs, and select fields at runtime.
@@ -141,6 +188,8 @@ select = []
 * **Transport Agnostic**: The protocol is designed to function over various transport layers, including serial, WebSocket, and TCP sockets, without requiring modifications to the client or server logic.
 
 * **Zero Maintenance**: Because the server dictates available actions and tool configurations on every turn, client software requires zero hardcoded API updates when backend capabilities evolve.
+
+* **Etiquette Over Rigid Enforcement**: Partial updates, accumulation, and empty-container resets communicate server intent rather than strictly enforcing client-side memory management. The client remains autonomous in deciding whether to preserve historical entries, archive obsolete states, or purge data immediately.
 
 ## Potential Issues and Considerations
 
