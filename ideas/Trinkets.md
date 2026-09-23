@@ -9,3 +9,5 @@ A compilation of small to medium-sized ideas for projects suitable for learning,
 * Vertical Gantt chart. Vertical lanes represent horizontal scaling capacity (workload capacity). The chart is segmented vertically into production cycles (sprints, project phases, etc.).
 * A framework for building WebGL2 playgrounds. An UI for WebGL!
 * Epidemic simulation: random walkers with a chance to spread infection, a latency phase with no symptoms, and post-latency aversion, where walkers avoid visibly sick individuals.
+
+* Error correction based on context: match the correct spelling and grammar considering the surrounding text. An OCR post-processing step.
