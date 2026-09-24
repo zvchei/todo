@@ -11,3 +11,4 @@
   - Orchestrator agent building a pipeline.
   - Temporary and residual artefacts.
   - Context control by the operator.
+  - Catalogue of prompts.
