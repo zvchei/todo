@@ -1,0 +1,13 @@
+# The AI toolbox
+
+* Building blocks:
+  - Structured input and output.
+  - Composable.
+  - Fluidware or software.
+* Recipes:
+  - Pre-constructed patterns.
+  - E.g.: List of items processed in parallel, or sequentially in a loop.
+* The interactive:
+  - Orchestrator agent building a pipeline.
+  - Temporary and residual artefacts.
+  - Context control by the operator.
