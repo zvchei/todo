@@ -33,7 +33,7 @@ CHP uses a lightweight layout to reduce byte overhead and provide a clear struct
 
 * **Dual Roles**: CHP is duplex: either peer may act as both a client and a server in the same session. A "client" may therefore publish object state, schemas, tools, and actions using the same protocol structures as a server. A peer that does not support processing peer-originated updates may ignore them. This allows agent-to-agent communication.
 
-* **Client Invocations (`[calls.<tool_name>]`)**: The client transmits execution commands by wrapping the tool name in a dedicated calls table and supplying required parameters directly as key-value pairs. Although the current protocol version permits only one action from the offered list per invocation, the calls container is a map keyed by tool name. This reserves support for multiple-action invocations in a future version.
+* **Client Invocations (`[[calls.<tool_name>]]`)**: The client transmits execution commands by appending an entry to a contextual array named after the tool being invoked, supplying required parameters directly as key-value pairs within that entry. A call is a discrete event, not persistent state, so it follows the same accumulation semantics as other contextual arrays (see below): each `[[calls.<tool_name>]]` entry triggers a new, independent invocation rather than replacing a prior one. This matters because a running session may have other calls already pending or executing in the background; a single-table (`[calls.<tool_name>]`) representation would look like a state refresh and could not represent a second invocation of the same tool. Although the current protocol version permits only one action from the offered list per message, the array-based container reserves support for multiple simultaneous or repeated invocations, including repeated calls to the same tool, in a future version.
 
 * **Optional Call Correlation (`id`)**: A tool may advertise an optional `id` argument in `args.properties`, but `id` must never appear in `args.required` as not every client may support generating random identifiers. Client SDKs or transport wrappers may inject the unique identifier into this field without requiring the agent or human operator to generate one. If an `id` is supplied, a server may expose schema-described current request state so the client can render and correlate operations across multiplexed channels. The request-state map key is a client-side context key and may differ from the `id` field inside the request object, which is the server-supported request identity used for correlation. Each entry may describe a pending, successful, or failed operation. A server may also expose schema-described historical lifecycle and outcome records, including timestamps, for reference by an operator or agent. If `id` is omitted, the server processes the invocation normally and must not reject the call for that reason.
 
@@ -76,7 +76,7 @@ select = ["heat_boiler", "check_reservoir", "shutdown"]
 # Client:
 # state = { current = "IDLE" }
 
-[calls.heat_boiler]
+[[calls.heat_boiler]]
 temp_c = 93
 id = "call_uuid_88f1"
 ```
@@ -147,7 +147,7 @@ select = ["grind_beans", "dispense_water", "shutdown"]
 ```toml
 # Client:
 
-[calls.shutdown]
+[[calls.shutdown]]
 ```
 
 ```toml
