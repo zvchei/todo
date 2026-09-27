@@ -1,8 +1,8 @@
-# The Contextual Hypermedia Protocol (CHP)
+# The Contextual Homeostasis Protocol (CHP)
 
 This article describes a design sketch for a fluid, state-driven interaction model for human and agent interfaces. CHP is not intended to be a rigid transport-level protocol with mandatory client memory semantics. Instead, it is a way for peers to negotiate context, expose available actions, and publish state transitions in a partially-updated, server-directed conversation. The server reveals state and permitted actions; the client may interpret, retain, archive, or discard that information as it sees fit.
 
-Modern APIs often force a trade-off between static REST schemas and more complex RPC layers. The Contextual Hypermedia Protocol (CHP) explores a different pattern: dynamic state machines expressed in a lightweight syntax that can be interpreted by both autonomous AI agents and runtime-rendered human interfaces. CHP works as a continuous dialogue loop in which the server presents an immediate action horizon, the client executes a command or provides requested arguments, and the server updates its state payloads to produce a refreshed menu. In CHP, context represents server-authoritative session state expressed through partial updates and intent signaling; the server determines the schemas, tools, and actions exposed to the client for its next invocation, while the client interprets and manages that context according to its own requirements.
+Modern APIs often force a trade-off between static REST schemas and more complex RPC layers. The Contextual Homeostasis Protocol (CHP) explores a different pattern: dynamic state machines expressed in a lightweight syntax that can be interpreted by both autonomous AI agents and runtime-rendered human interfaces. CHP works as a continuous dialogue loop in which the server presents an immediate action horizon, the client executes a command or provides requested arguments, and the server updates its state payloads to produce a refreshed menu. In CHP, context represents server-authoritative session state expressed through partial updates and intent signaling; the server determines the schemas, tools, and actions exposed to the client for its next invocation, while the client interprets and manages that context according to its own requirements.
 
 ## Protocol Syntax and Mechanics
 
@@ -208,6 +208,8 @@ state = {}
 
 ## Architectural Principles
 
+* **Contextual Homeostasis**: A homeostatic system holds one condition steady through small, continual corrections. In CHP, that condition is alignment: each peer keeps its local context in parity with what the other peer publishes. Each message carries only what changed, so a context can shrink as well as grow. The peers only share the conventions for signalling change. Applied consistently, this keeps a runtime-rendered UI or an AI agent's context window current, while retaining each peer's autonomy over it.
+
 * **Client Agnostic**: AI agents parse the raw tool maps and unique action names to make programmatic decisions. Human client applications read the same payloads to dynamically render native widgets, text inputs, and select fields at runtime.
 
 * **Transport Agnostic**: The protocol is shaped to function over various transport layers, including serial, WebSocket, and TCP sockets, without requiring special client or server logic for the transport itself.
@@ -238,7 +240,7 @@ Human interfaces, CLI clients, and AI agents inspect these application-level upd
 
 ## Open Questions and Future Work
 
-* **Schema Refresh / Rehydration**: The protocol currently has no explicit mechanism for requesting a missing or out-of-date schema. A future version should define how a client asks for a schema refresh or rehydration without guessing state structure.
+* **Schema Refresh / Rehydration**: The protocol currently has no explicit mechanism for requesting a missing or out-of-date schema, or for recovering state after a missed update. Partial updates assume that every earlier message was applied, so a client that misses one or restarts falls out of step, often without noticing, and has no protocol-level way to ask for a correction. This leaves a gap in the Contextual Homeostasis principle: corrections reach the client, but the client cannot report drift. A future version should define how a client asks for a schema refresh or a full state snapshot without guessing state structure.
 
 * **Retained Definitions**: The protocol currently has no explicit deletion mechanism for schemas or tools. Long-lived sessions that continuously introduce uniquely named definitions may therefore retain unnecessary client-side state and cause a memory leak. Implementations should consider session limits or client-side eviction.
 
