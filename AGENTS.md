@@ -22,7 +22,7 @@ Research and ideation documentation repository for capturing and developing idea
 - **Preserve structure**: Maintain document style and cross-link conventions
 - **Include next steps**: Use "Next" section with bullet points for next steps, open questions, and further directions
 - **Cross-reference**: Link related concepts to build the mesh
-- **Commit messages**: Descriptive and explain reasoning
+- **Commit messages**: As short as possible without losing the general meaning of the change; only add a list of details for big changes
 - **No tracking files**: Don't create markdown files for planning or notes—use git history instead
 - **Research methodology**: Document both findings and approach when exploring ideas
 
