@@ -12,3 +12,6 @@
   - Temporary and residual artefacts.
   - Context control by the operator.
   - Catalogue of prompts.
+* Autonomy
+  - Typical memory patterns are fragile. Memory should be part of the project.
+  - Skills should not be injected implicitly. Any allowed skill is listed in AGENTS.md.
