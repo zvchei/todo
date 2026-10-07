@@ -15,3 +15,6 @@
 * Autonomy
   - Typical memory patterns are fragile. Memory should be part of the project.
   - Skills should not be injected implicitly. Any allowed skill is listed in AGENTS.md.
+* Memory and dreaming
+  - [Devin’s Memory and Dreaming](https://devin.ai/blog/memory-and-dreaming) (October 5, 2026) describes a persistent, personal memory drive for agents: short lessons from work (preferences, corrections, and project or workflow knowledge), rather than session summaries, stored as Markdown and indexed by `MEMORY.md`. Sessions use separate Git checkouts, with revision checks and conflict handling to avoid silently overwriting concurrent updates.
+  - Its daily dreaming process revisits conversations and existing notes to consolidate overlaps, discard transient or stale details, and recover lessons missed during the original work. Devin distinguishes accumulated memory from skills, which package repeatable workflows for deliberate reuse.
