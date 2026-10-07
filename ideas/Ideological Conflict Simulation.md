@@ -78,6 +78,14 @@ Timestamp serves one purpose: establishing recency order, so the system knows wh
 
 ---
 
+### Related System: Devin Memory and Dreaming
+
+[Devin’s Memory and Dreaming](https://devin.ai/blog/memory-and-dreaming) (October 5, 2026) describes a practical agent memory system. It records short, reusable lessons from work — preferences, corrections, and project or workflow knowledge — rather than session summaries, and links each note back to the session where it was learned. The notes live in a persistent Markdown Git repository, indexed by a short `MEMORY.md`; each session works in its own checkout, with revision checks and conflict handling to prevent stale concurrent writes from silently overwriting newer changes.
+
+Its daily “dreaming” pass revisits conversations and existing notes to consolidate overlaps, remove transient or stale details, and recover useful lessons missed during the original session. This is a useful comparison for the model above: dreaming can maintain a persistent memory index by revising what is retained and how it is organized, not only by changing graph weights. Devin distinguishes this accumulated, user-specific context from skills, which package repeatable workflows for deliberate reuse.
+
+---
+
 ### Ideological Suppression in This Model
 
 "Ideological resolution" is the cumulative outcome of repeated battles and dreaming passes acting on both node weights and edge weights. Nodes connecting outgroup members to attributes like *human*, *innocent*, *suffering* lose battles, have their node weights suppressed below the thinking threshold, and are subsequently seeded less often during dreaming. Their edge weights to the dominant cluster decay from disuse. They become unreachable by conscious thought — but not absent.
