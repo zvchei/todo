@@ -40,3 +40,6 @@ A multi-step approach like focusing on an object first and then presenting relev
 ## Multi-Layered Agent Goals and Sub-Quests
 The concept of multi-layered goals (main goal, secondary goals, and sub-quests) is required for depth. It allows the engine to guide the agent towards broad objectives like "find food," offering high-level paths (e.g., "go to the orchard"), but then letting the agent tackle the necessary intermediate steps (e.g., "exit the hut") and even granular challenges (e.g., "find a key") on its own.
 This hierarchy means the agent's current prompt can always clearly define its immediate focus, even if that focus is just a small step towards a much larger objective. This design will be key to managing complexity and enabling sophisticated problem-solving within the text-based world.
+
+## Related
+* [Colony sim with LLM minds](Colony%20sim%20with%20LLM%20minds.md) - The same engine/mind split moved into a visual 2D simulation: a deterministic body executes primitives validated by the engine, while the LLM mind interprets natural-language orders from the player and may refuse them. Ideas on primitives, goal hierarchies, and decision logging should carry over in both directions.

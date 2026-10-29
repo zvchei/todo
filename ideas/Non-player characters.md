@@ -60,3 +60,5 @@ part of their personal environment. Enable agents to share these abstract object
 
 * Iterative Development: Implement the simulation mechanics in iterative way, allowing to refine and adjust based on
 experimental outcomes.
+
+A visual, spatial application of these agents, controlled by natural-language orders they may refuse, is sketched in [Colony sim with LLM minds](Colony%20sim%20with%20LLM%20minds.md).

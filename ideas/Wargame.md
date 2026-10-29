@@ -56,7 +56,7 @@ The game operates on a turn-based system, with each turn representing a predefin
 
 * **Action Rejection**: The engine may reject an action if deemed unrealistic, providing a clear reason to the player.
 
-* **Actions validation**: Actions need to be validated for realism, but also for attempts to inject consequences. The engine needs to detect of the player are attempting to influence the outcome by suggesting what may happen.
+* **Actions validation**: Actions need to be validated for realism, but also for attempts to inject consequences. The engine needs to detect of the player are attempting to influence the outcome by suggesting what may happen. The same problem appears at character level in [Colony sim with LLM minds](Colony%20sim%20with%20LLM%20minds.md), where players may try to talk colonists out of their fears or values; there, the player's words are treated as speech inside the world, not as instructions to the model.
 
 #### Phase 4: Aggregation & Conflict Resolution
 
